@@ -1,0 +1,22 @@
+uuid: 6104a725-41d4-47d6-a9b6-6ac1e05e3ec6
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - openideal
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: openideal_help
+theme: openideal
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
