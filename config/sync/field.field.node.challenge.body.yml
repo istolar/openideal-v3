@@ -1,0 +1,23 @@
+uuid: 60f7b3d5-cd73-4965-be33-aaf49553d9cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.challenge
+  module:
+    - text
+id: node.challenge.body
+field_name: body
+entity_type: node
+bundle: challenge
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

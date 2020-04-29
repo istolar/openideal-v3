@@ -1,0 +1,22 @@
+uuid: 391431d8-fa89-4803-a455-428012aeca27
+langcode: en
+status: true
+dependencies:
+  theme:
+    - openideal
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: openideal_local_tasks
+theme: openideal
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

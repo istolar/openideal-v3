@@ -1,0 +1,22 @@
+uuid: 0c5d6433-b3f0-4147-8541-4957cc5744cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openideal
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: openideal_content
+theme: openideal
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
