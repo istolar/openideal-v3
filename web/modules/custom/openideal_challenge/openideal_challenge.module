@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Contains openideal_challenge.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function openideal_challenge_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the openideal_challenge module.
+    case 'help.page.openideal_challenge':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function openideal_challenge_cron() {
+  // Processing open/close scheduling challenge nodes via cron.
+  /** @var \Drupal\openideal_challenge\Service\OpenidealChallengeService $challenge_service */
+  $challenge_service = \Drupal::service('openideal_challenge.challenge_service');
+  $challenge_service->challengeOpenCloseOperation();
+  $challenge_service->challengeOpenCloseOperation('close');
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function openideal_challenge_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!in_array($form_id, ['node_challenge_edit_form', 'node_challenge_form'])) {
+    return;
+  }
+
+  // Added visibility states to open_on and close_on form elements.
+  $form['field_open_on']['#states'] = [
+    'visible' => [
+      ':input[name="field_is_open[value]"]' => ['checked' => FALSE],
+    ],
+  ];
+
+  $form['field_close_on']['#states'] = [
+    'visible' => [
+      ':input[name="field_is_open[value]"]' => ['checked' => TRUE],
+    ],
+  ];
+
+  // Move open_on/close_on form elements to the sidebar of the form.
+  $form['challenge_scheduling_options'] = [
+    '#type' => 'details',
+    '#title' => t('Challenge scheduling options'),
+    '#group' => 'advanced',
+  ];
+
+  $form['challenge_scheduling_options'][] = $form['field_open_on'];
+  $form['challenge_scheduling_options'][] = $form['field_close_on'];
+  unset($form['field_open_on']);
+  unset($form['field_close_on']);
+}
