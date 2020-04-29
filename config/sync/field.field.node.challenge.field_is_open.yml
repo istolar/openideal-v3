@@ -10,7 +10,7 @@ field_name: field_is_open
 entity_type: node
 bundle: challenge
 label: 'Is open'
-description: ''
+description: 'Check this to mark the current challenge as open.'
 required: false
 translatable: false
 default_value:
