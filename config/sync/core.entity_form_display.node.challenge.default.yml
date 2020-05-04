@@ -87,17 +87,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  publish_on:
-    weight: 33
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_timestamp
-    region: content
-  scheduler_settings:
-    weight: 20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -130,11 +119,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    weight: 34
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_timestamp
-    region: content
 hidden:
   promote: true
