@@ -1,0 +1,53 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the openideal install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function openideal_install() {
+  // First, do everything in standard profile.
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $taxonomy_term_storage = $entity_type_manager->getStorage('taxonomy_term');
+  $node_storage = $entity_type_manager->getStorage('node');
+  $config_pages_storage = $entity_type_manager->getStorage('config_pages');
+
+  // Create default life cycles taxonomy terms.
+  $default_life_cycles = [
+    'Ideation',
+    'Internal process',
+    'Accepted',
+    'Rejected',
+    'Merged',
+  ];
+
+  foreach ($default_life_cycles as $term_name) {
+    $taxonomy_term_storage->create([
+      'name' => $term_name,
+      'vid' => 'ideas_life_cycles',
+    ])->save();
+  }
+
+  // Create default challenge item.
+  $node_storage->create([
+    'type' => 'challenge',
+    'title' => 'The ideas bucket',
+    'langcode' => 'en',
+    'uid' => '1',
+    'status' => 1,
+    'is_open' => TRUE,
+  ])->save();
+
+  // Set default challenge for openideal pages configuration.
+  // $default_configurations = $config_pages_storage->load(1);
+  // $default_configurations->set('field_default_challenge', 1)->save();
+}

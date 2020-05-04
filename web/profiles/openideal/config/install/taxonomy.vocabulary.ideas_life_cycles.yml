@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Ideas Life Cycles'
+vid: ideas_life_cycles
+description: 'It provides life cycles for idea content type.'
+weight: 0
