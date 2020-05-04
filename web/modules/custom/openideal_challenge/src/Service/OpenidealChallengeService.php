@@ -58,9 +58,19 @@ class OpenidealChallengeService implements OpenidealChallengeServiceInterface {
   }
 
   /**
-   * {@inheritdoc}
+   * Processing for closing / opening scheduled nodes.
+   *
+   * @param string $operation
+   *   The name of operation 'open/close'.
+   *
+   * @return bool
+   *   TRUE if any node has been closed / opened, FALSE otherwise.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function challengeOpenCloseOperation($operation = 'open') {
+  protected function challengesOperation($operation) {
     $result = FALSE;
     $operation_field_name = $operation == 'open' ? 'field_open_on' : 'field_close_on';
     $event_name = $operation == 'open' ? OpenidealChallengeEvent::CHALLENGE_OPEN : OpenidealChallengeEvent::CHALLENGE_CLOSE;
@@ -89,7 +99,7 @@ class OpenidealChallengeService implements OpenidealChallengeServiceInterface {
     foreach ($nodes as $node) {
       if ($node->hasField('field_is_open')) {
         // Mark challenge node as opened/closed.
-        $node->field_is_open->value = ($operation == 'open');
+        $node->set('field_is_open', ($operation == 'open'));
       }
       // Unset open_on/close_on field's value.
       $node->set($operation_field_name, NULL);
@@ -106,6 +116,20 @@ class OpenidealChallengeService implements OpenidealChallengeServiceInterface {
     }
 
     return $result;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function openChallenges() {
+    $this->challengesOperation('open');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function closeChallenges() {
+    $this->challengesOperation('close');
   }
 
 }

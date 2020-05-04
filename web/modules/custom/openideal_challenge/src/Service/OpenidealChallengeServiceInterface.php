@@ -8,14 +8,13 @@ namespace Drupal\openideal_challenge\Service;
 interface OpenidealChallengeServiceInterface {
 
   /**
-   * Processing for closing / opening scheduled nodes.
-   *
-   * @param string $operation
-   *   The name of operation 'open/close'.
-   *
-   * @return bool
-   *   TRUE if any node has been closed / opened, FALSE otherwise.
+   * Processing for opening scheduled nodes.
    */
-  public function challengeOpenCloseOperation($operation = 'open');
+  public function openChallenges();
+
+  /**
+   * Processing for closing scheduled nodes.
+   */
+  public function closeChallenges();
 
 }
