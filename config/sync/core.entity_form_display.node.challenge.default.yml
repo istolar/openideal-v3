@@ -4,15 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.challenge.body
+    - field.field.node.challenge.field_close_on
     - field.field.node.challenge.field_images
     - field.field.node.challenge.field_is_open
     - field.field.node.challenge.field_main_image
+    - field.field.node.challenge.field_open_on
     - field.field.node.challenge.field_supporting_data
     - image.style.thumbnail
     - node.type.challenge
   module:
     - file
     - image
+    - openideal_challenge
     - path
     - text
 id: node.challenge.default
@@ -36,6 +39,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_close_on:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: openideal_datetime_timestamp
+    region: content
   field_images:
     weight: 8
     settings:
@@ -58,6 +67,12 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_open_on:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: openideal_datetime_timestamp
     region: content
   field_supporting_data:
     weight: 9
