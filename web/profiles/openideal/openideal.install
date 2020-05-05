@@ -34,10 +34,11 @@ function openideal_install() {
     'Merged',
   ];
 
-  foreach ($default_life_cycles as $term_name) {
+  foreach ($default_life_cycles as $key => $term_name) {
     $taxonomy_term_storage->create([
       'name' => $term_name,
       'vid' => 'ideas_life_cycles',
+      'weight' => $key
     ])->save();
   }
 
