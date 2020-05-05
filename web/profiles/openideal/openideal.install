@@ -4,6 +4,8 @@
  * Install, update and uninstall functions for the openideal install profile.
  */
 
+use Drupal\user\Entity\User;
+
 /**
  * Implements hook_install().
  *
@@ -12,9 +14,11 @@
  * @see system_install()
  */
 function openideal_install() {
-  // First, do everything in standard profile.
-  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
-  standard_install();
+  // Assign user 1 the "administrator" role.
+  // @see standard_install().
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
 
   $entity_type_manager = \Drupal::entityTypeManager();
   $taxonomy_term_storage = $entity_type_manager->getStorage('taxonomy_term');
@@ -44,10 +48,15 @@ function openideal_install() {
     'langcode' => 'en',
     'uid' => '1',
     'status' => 1,
-    'is_open' => TRUE,
+    'field_is_open' => TRUE,
   ])->save();
 
   // Set default challenge for openideal pages configuration.
-  // $default_configurations = $config_pages_storage->load(1);
-  // $default_configurations->set('field_default_challenge', 1)->save();
+  $config_pages_storage->create([
+    'type' => 'openideal_configurations',
+    'context' => serialize([0 => ["language" => "en"]]),
+    'status' => 1,
+    'label' => 'OpenideaL Configurations',
+    'field_default_challenge' => 1,
+  ])->save();
 }

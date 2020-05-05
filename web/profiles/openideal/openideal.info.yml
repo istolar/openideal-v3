@@ -1,11 +1,7 @@
-name: OpenideaL Installation Profile
+name: OpenideaL
 type: profile
 description: 'Basic installation profile for OpenideaL sites.'
 core: 8.x
-
-distribution:
-  name: OpenideaL
-  langcode: en
 
 # Required modules
 dependencies:
@@ -74,10 +70,5 @@ dependencies:
   - openideal_idea
 
 themes:
-  - stable
-  - classy
-  - bartik
-  - seven
   - adminimal_theme
-  - bootstrap
-  - openideal
+  - openideal_theme
