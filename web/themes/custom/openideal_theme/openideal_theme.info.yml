@@ -21,4 +21,4 @@ regions:
 
 libraries-extend:
   bootstrap/framework:
-    - openideal/framework
+    - openideal_theme/framework

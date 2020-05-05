@@ -1,13 +1,13 @@
-uuid: 391431d8-fa89-4803-a455-428012aeca27
+uuid: 3a978da1-4459-4e5d-a71c-9bbb9618bb49
 langcode: en
 status: true
 dependencies:
   theme:
-    - openideal
+    - openideal_theme
 _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
-id: openideal_local_tasks
-theme: openideal
+id: openideal_theme_local_tasks
+theme: openideal_theme
 region: content
 weight: -40
 provider: null

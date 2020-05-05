@@ -1,15 +1,15 @@
-uuid: 91ba9937-0451-4417-b17c-9ceda209f350
+uuid: 24abd98b-9e8f-4324-9f20-5a7b5b772d39
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - openideal
+    - openideal_theme
 _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: openideal_branding
-theme: openideal
+id: openideal_theme_branding
+theme: openideal_theme
 region: header
 weight: 0
 provider: null
