@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.idea.body
     - field.field.node.idea.field_attached_docs
     - field.field.node.idea.field_challenge
+    - field.field.node.idea.field_duplicate
+    - field.field.node.idea.field_duplicate_of
     - field.field.node.idea.field_idea_phase
     - field.field.node.idea.field_idea_tags
     - field.field.node.idea.field_images
@@ -52,6 +54,23 @@ content:
     region: content
   field_challenge:
     weight: 9
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_duplicate:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_duplicate_of:
+    weight: 13
     settings:
       match_operator: CONTAINS
       match_limit: 10
