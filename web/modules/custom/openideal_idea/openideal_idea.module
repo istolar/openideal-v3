@@ -18,11 +18,7 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
 
   // Get settings page for default challenge entity.
   $openideal_config = config_pages_config('openideal_configurations');
-  if (
-    !empty($openideal_config)
-    && $openideal_config instanceof ConfigPages
-    && $openideal_config->hasField('field_default_challenge')
-  ) {
+  if (!empty($openideal_config)) {
     // Get default challenge entity.
     $default_challenge = $openideal_config->field_default_challenge->entity;
   }
