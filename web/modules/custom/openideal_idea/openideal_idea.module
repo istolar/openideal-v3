@@ -5,7 +5,6 @@
  * Contains openideal_idea.module.
  */
 
-use Drupal\config_pages\Entity\ConfigPages;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -30,4 +29,22 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
     // Set default value for challenge form element of the idea content type.
     $form['field_challenge']['widget'][0]['target_id']['#default_value'] = $default_challenge;
   }
+
+  // Move duplicate form elements to the fieldset.
+  $form['duplicate_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Duplicate idea'),
+    '#weight' => 100,
+  ];
+  $form['duplicate_fieldset']['field_duplicate'] = $form['field_duplicate'];
+  $form['duplicate_fieldset']['field_duplicate_of'] = $form['field_duplicate_of'];
+  unset($form['field_duplicate']);
+  unset($form['field_duplicate_of']);
+
+  // Added visibility states to field_duplicate_of form element.
+  $form['duplicate_fieldset']['field_duplicate_of']['#states'] = [
+    'visible' => [
+      ':input[name="field_duplicate[value]"]' => ['checked' => TRUE],
+    ],
+  ];
 }
