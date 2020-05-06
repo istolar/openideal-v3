@@ -55,6 +55,14 @@
     "config": {
         "sort-packages": true
     },
+    "scripts": {
+        "post-install-cmd": [
+            "rm -rf web/libraries/dropzone/test"
+        ],
+        "post-update-cmd": [
+            "rm -rf web/libraries/dropzone/test"
+        ]
+    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
