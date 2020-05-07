@@ -18,7 +18,7 @@ $databases['default']['default'] = [
   'driver' => 'mysql',
 ];
 ```
-5. Configure your local environment (we are recommended to use [docker4drupal](https://github.com/wodby/docker4drupal))
+5. Configure your local environment (we recommend using [docker4drupal](https://github.com/wodby/docker4drupal))
 6. Open the site URL in your browser and run the install process as usual (or see the next section of this documentation
 to up and running the project with one line command)
 7. On the installation profile step select 'OpenideaL' installation profile

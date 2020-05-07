@@ -1,4 +1,3 @@
-uuid: f62a62fd-839a-4fdd-b827-7df53a23e640
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - system
   theme:
     - openideal_theme
-_core:
-  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: openideal_theme_messages
 theme: openideal_theme
 region: highlighted
