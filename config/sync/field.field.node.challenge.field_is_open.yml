@@ -9,8 +9,8 @@ id: node.challenge.field_is_open
 field_name: field_is_open
 entity_type: node
 bundle: challenge
-label: 'Is open'
-description: 'Check this to mark the current challenge as open.'
+label: Open
+description: "Check or uncheck this to mark the current challenge as open or close.\r\nChallenges without \"Open\" option are still published but they are closed for further activity."
 required: false
 translatable: false
 default_value:

@@ -1,8 +1,0 @@
-uuid: 7e9298de-a9c0-4155-bc5d-6a46c9d55e1f
-langcode: en
-status: true
-dependencies: {  }
-name: 'Ideas Life Cycles'
-vid: ideas_life_cycles
-description: 'It provides life cycles for idea content type.'
-weight: 0

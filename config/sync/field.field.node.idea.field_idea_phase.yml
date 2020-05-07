@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_idea_phase
     - node.type.idea
-    - taxonomy.vocabulary.ideas_life_cycles
 id: node.idea.field_idea_phase
 field_name: field_idea_phase
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      ideas_life_cycles: ideas_life_cycles
+    target_bundles: {  }
     sort:
       field: name
       direction: asc
