@@ -36,15 +36,6 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
     '#title' => t('Duplicate idea'),
     '#weight' => 100,
   ];
-  $form['duplicate_fieldset']['field_duplicate'] = $form['field_duplicate'];
   $form['duplicate_fieldset']['field_duplicate_of'] = $form['field_duplicate_of'];
-  unset($form['field_duplicate']);
   unset($form['field_duplicate_of']);
-
-  // Added visibility states to field_duplicate_of form element.
-  $form['duplicate_fieldset']['field_duplicate_of']['#states'] = [
-    'visible' => [
-      ':input[name="field_duplicate[value]"]' => ['checked' => TRUE],
-    ],
-  ];
 }

@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.idea.body
     - field.field.node.idea.field_attached_docs
     - field.field.node.idea.field_challenge
-    - field.field.node.idea.field_duplicate
     - field.field.node.idea.field_duplicate_of
     - field.field.node.idea.field_idea_phase
     - field.field.node.idea.field_idea_tags
@@ -163,16 +162,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_duplicate:
-    weight: 108
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   field_duplicate_of:
     weight: 107

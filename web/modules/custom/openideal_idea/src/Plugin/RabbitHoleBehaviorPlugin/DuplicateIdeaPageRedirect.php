@@ -28,7 +28,6 @@ class DuplicateIdeaPageRedirect extends PageRedirect {
   public function performAction(EntityInterface $entity, Response $current_response = NULL) {
     if (
       $entity->bundle() !== 'idea' ||
-      empty($entity->field_duplicate->value) ||
       empty($entity->field_duplicate_of->entity)
     ) {
       return;
