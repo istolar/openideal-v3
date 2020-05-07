@@ -37,7 +37,7 @@ function openideal_install() {
   foreach ($default_life_cycles as $key => $term_name) {
     $taxonomy_term_storage->create([
       'name' => $term_name,
-      'vid' => 'ideas_life_cycles',
+      'vid' => 'idea_states',
       'weight' => $key
     ])->save();
   }
