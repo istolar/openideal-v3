@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.ideas_life_cycles
-id: taxonomy_vocabulary_ideas_life_cycles
+    - taxonomy.vocabulary.idea_states
+id: taxonomy_vocabulary_idea_states
 action: access_denied
-allow_override: 1
+allow_override: 0
 redirect: ''
 redirect_code: 301

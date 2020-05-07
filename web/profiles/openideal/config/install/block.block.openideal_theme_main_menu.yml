@@ -1,4 +1,3 @@
-uuid: 2fddede7-3748-41a0-b01b-3905d94ad9b7
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - system
   theme:
     - openideal_theme
-_core:
-  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
 id: openideal_theme_main_menu
 theme: openideal_theme
 region: navigation
