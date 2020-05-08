@@ -44,6 +44,7 @@ module:
   path_alias: 0
   quickedit: 0
   rabbit_hole: 0
+  rh_node: 0
   rh_taxonomy: 0
   search: 0
   shortcut: 0

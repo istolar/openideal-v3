@@ -5,7 +5,6 @@
  * Contains openideal_idea.module.
  */
 
-use Drupal\config_pages\Entity\ConfigPages;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -18,11 +17,7 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
 
   // Get settings page for default challenge entity.
   $openideal_config = config_pages_config('openideal_configurations');
-  if (
-    !empty($openideal_config)
-    && $openideal_config instanceof ConfigPages
-    && $openideal_config->hasField('field_default_challenge')
-  ) {
+  if (!empty($openideal_config)) {
     // Get default challenge entity.
     $default_challenge = $openideal_config->field_default_challenge->entity;
   }
@@ -34,4 +29,13 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
     // Set default value for challenge form element of the idea content type.
     $form['field_challenge']['widget'][0]['target_id']['#default_value'] = $default_challenge;
   }
+
+  // Move duplicate form elements to the fieldset.
+  $form['duplicate_fieldset'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Duplicate idea'),
+    '#weight' => 100,
+  ];
+  $form['duplicate_fieldset']['field_duplicate_of'] = $form['field_duplicate_of'];
+  unset($form['field_duplicate_of']);
 }

@@ -14,7 +14,6 @@ dependencies:
     - node.type.challenge
   module:
     - entity_browser
-    - file
     - openideal_challenge
     - path
     - text
@@ -89,9 +88,16 @@ content:
   field_supporting_data:
     weight: 8
     settings:
-      progress_indicator: throbber
+      entity_browser: openideal_file_browser
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_edit: true
+      field_widget_replace: false
+      open: false
+      view_mode: default
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: file_generic
+    type: entity_browser_file
     region: content
   path:
     type: path
