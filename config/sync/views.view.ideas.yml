@@ -11,6 +11,7 @@ dependencies:
     - system.menu.main
     - taxonomy.vocabulary.idea_states
   module:
+    - better_exposed_filters
     - node
     - taxonomy
     - text
@@ -45,7 +46,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -54,6 +55,59 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_hide: false
+            sort:
+              bef_format: default
+              advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
+                combine: true
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                is_secondary: false
+            field_idea_phase_target_id:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            uid:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                placeholder_text: ''
+                rewrite:
+                  filter_rewrite_values: ''
+            field_challenge_target_id:
+              bef_format: default
+              slider_options:
+                bef_slider_min: null
+                bef_slider_max: null
+                bef_slider_step: !!float 1
+                bef_slider_animate: ''
+                bef_slider_orientation: ''
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+            body_value:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+          text_input_required_format: basic_html
       pager:
         type: mini
         options:
@@ -667,6 +721,7 @@ display:
         type: normal
         title: Ideas
         menu_name: main
+        weight: -49
       filters:
         status:
           value: '1'
