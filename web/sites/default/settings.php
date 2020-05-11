@@ -239,6 +239,7 @@ $databases = [];
  */
 # $settings['config_sync_directory'] = '/directory/outside/webroot';
 $config_directories['sync'] = '../config/sync';
+$config_directories['profile'] = '../web/profiles/openideal/config/install';
 
 /**
  * Settings:
