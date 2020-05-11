@@ -4,7 +4,9 @@ dependencies:
   config:
     - field.field.node.idea.body
     - field.field.node.idea.field_attached_docs
+    - field.field.node.idea.field_category
     - field.field.node.idea.field_challenge
+    - field.field.node.idea.field_duplicate_of
     - field.field.node.idea.field_idea_phase
     - field.field.node.idea.field_idea_tags
     - field.field.node.idea.field_images
@@ -132,6 +134,22 @@ third_party_settings:
                 type: entity_reference_label
             additional: {  }
             weight: 7
+          d0be5fb8-776f-4516-8c9a-bbd517d1dba9:
+            uuid: d0be5fb8-776f-4516-8c9a-bbd517d1dba9
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:idea:field_category'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 8
         third_party_settings: {  }
 id: node.idea.default
 targetEntityType: node
@@ -153,9 +171,25 @@ content:
     third_party_settings: {  }
     type: file_default
     region: content
+  field_category:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_challenge:
     weight: 106
     label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_duplicate_of:
+    weight: 107
+    label: above
     settings:
       link: true
     third_party_settings: {  }

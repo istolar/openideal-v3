@@ -10,7 +10,9 @@ dependencies:
   - admin_toolbar_search
   - admin_toolbar_tools
   - adminimal_admin_toolbar
+  - allowed_formats
   - automated_cron
+  - better_exposed_filters
   - big_pipe
   - block
   - block_content
@@ -34,6 +36,7 @@ dependencies:
   - field_ui
   - file
   - filter
+  - flag
   - history
   - image
   - layout_builder
