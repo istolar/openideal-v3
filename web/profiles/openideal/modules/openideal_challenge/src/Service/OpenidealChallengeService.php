@@ -97,10 +97,8 @@ class OpenidealChallengeService implements OpenidealChallengeServiceInterface {
       ->loadMultiple($nids);
     /** @var \Drupal\node\NodeInterface $node */
     foreach ($nodes as $node) {
-      if ($node->hasField('field_is_open')) {
-        // Mark challenge node as opened/closed.
-        $node->set('field_is_open', ($operation == 'open'));
-      }
+      // Mark challenge node as opened/closed.
+      $node->set('field_is_open', ($operation == 'open'));
       // Unset open_on/close_on field's value.
       $node->set($operation_field_name, NULL);
       $node->save();
