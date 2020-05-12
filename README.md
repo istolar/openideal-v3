@@ -53,10 +53,10 @@ To export some changes from database to sync directory please use the following 
 There are two ways to pull and apply the latest changes:
 
 1. By performing a new installation via Drush (Recommended):
-make install
+`make install`
 
 2. By importing new changes from sync directory to the database:
-drush cim --partial --source="profiles/openideal/config/install"
+`drush cim --partial --source="profiles/openideal/config/install"`
 
 It'll show a huge diff because of UUID differences.
 
