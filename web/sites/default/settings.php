@@ -237,9 +237,7 @@ $databases = [];
  * directory in the public files path. The setting below allows you to set
  * its location.
  */
-# $settings['config_sync_directory'] = '/directory/outside/webroot';
-$config_directories['sync'] = '../config/sync';
-$config_directories['profile'] = '../web/profiles/openideal/config/install';
+$config_directories['sync'] = 'web/profiles/openideal/config/install';
 
 /**
  * Settings:
@@ -380,7 +378,6 @@ $settings['update_free_access'] = FALSE;
  * @see \Symfony\Component\HttpFoundation\Request::setTrustedProxies
  */
 # $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED;
-
 
 /**
  * Page caching:
@@ -755,7 +752,6 @@ $settings['skip_permissions_hardening'] = TRUE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }

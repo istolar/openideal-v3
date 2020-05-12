@@ -51,7 +51,6 @@ dependencies:
   - quickedit
   - rabbit_hole
   - rh_taxonomy
-  - search
   - shortcut
   - system
   - taxonomy
