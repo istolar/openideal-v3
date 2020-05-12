@@ -128,6 +128,16 @@ third_party_settings:
                 type: entity_reference_label
             additional: {  }
             weight: 5
+          5857031f-2b9f-4734-a83c-53f0cb56a2d3:
+            uuid: 5857031f-2b9f-4734-a83c-53f0cb56a2d3
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:challenge:flag_challenge_flag'
+            additional: {  }
+            weight: 6
         third_party_settings: {  }
 id: node.challenge.default
 targetEntityType: node
@@ -204,6 +214,11 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
+    region: content
+  flag_challenge_flag:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
     region: content
   links:
     weight: 100
