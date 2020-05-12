@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_cron().
@@ -50,4 +52,22 @@ function openideal_challenge_form_alter(&$form, FormStateInterface $form_state, 
   $form['challenge_scheduling_options'][] = $form['field_close_on'];
   unset($form['field_open_on']);
   unset($form['field_close_on']);
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function openideal_challenge_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() === 'challenges' && $view->current_display === 'all_challenges_page' && $view->exposed_data['sort_by'] === 'field_close_on_value') {
+    $table = 'node__field_close_on';
+    $field = 'field_close_on_value';
+    $alias = implode('_', [$table, $field, 'is_null']);
+
+    // Add extra sort order to show challenges with empty "Closed On" field
+    // value at the end.
+    $query->addOrderBy(NULL, "ISNULL($table.$field)", 'ASC', $alias);
+    $new_order_index = count($query->orderby) - 1;
+    array_unshift($query->orderby, $query->orderby[$new_order_index]);
+    unset($query->orderby[$new_order_index]);
+  }
 }
