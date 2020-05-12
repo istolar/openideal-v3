@@ -666,21 +666,6 @@ display:
         groups:
           1: AND
       sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
         random:
           id: random
           table: views
@@ -742,7 +727,7 @@ display:
                 bef_collapsible: false
                 is_secondary: false
                 rewrite:
-                  filter_rewrite_values: "True|Open\r\nFalse|Close"
+                  filter_rewrite_values: "True|Open\r\nFalse|Closed"
             field_category_target_id:
               bef_format: default
               more_options:
