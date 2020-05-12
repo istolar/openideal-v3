@@ -17,4 +17,3 @@ site-install:
 		--site-name="$(SITE_NAME)" \
 		install_configure_form.update_status_module='array(FALSE,FALSE)' \
 		-y
-	docker-compose exec php ../vendor/bin/drush -y cset system.site uuid $(cat config/sync/system.site.yml | awk '/uuid/ { print $2 }')
