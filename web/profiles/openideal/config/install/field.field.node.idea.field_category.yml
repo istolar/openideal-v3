@@ -5,15 +5,19 @@ dependencies:
     - field.storage.node.field_category
     - node.type.idea
     - taxonomy.vocabulary.categories
+  content:
+    - 'taxonomy_term:categories:d12cf66f-ed56-4237-8246-207941e9353f'
 id: node.idea.field_category
 field_name: field_category
 entity_type: node
 bundle: idea
 label: Category
 description: ''
-required: false
+required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    target_uuid: d12cf66f-ed56-4237-8246-207941e9353f
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

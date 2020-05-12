@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'Idea states'
+name: 'Idea Life Cycle'
 vid: idea_states
-description: 'It provides life cycles for idea content type.'
+description: 'Phases in an idea life cycle from conception to execution'
 weight: 0

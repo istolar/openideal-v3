@@ -5,15 +5,19 @@ dependencies:
     - field.storage.node.field_idea_phase
     - node.type.idea
     - taxonomy.vocabulary.idea_states
+  content:
+    - 'taxonomy_term:idea_states:0170af2f-6d6c-4929-a715-bbcac9d036ca'
 id: node.idea.field_idea_phase
 field_name: field_idea_phase
 entity_type: node
 bundle: idea
 label: Phase
 description: ''
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 0170af2f-6d6c-4929-a715-bbcac9d036ca
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
