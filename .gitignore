@@ -6,10 +6,6 @@
 /web/sites/*/settings.local.php
 /web/sites/*/services*.yml
 
-# Ignore useless profile configuration.
-web/profiles/openideal/config/install/core.extension.yml
-web/profiles/openideal/config/install/system.site.yml
-
 # Ignore paths that may contain user-generated content
 /web/sites/*/files
 /web/sites/*/public
