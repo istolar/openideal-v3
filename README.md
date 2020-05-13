@@ -36,27 +36,22 @@ the [composer](https://getcomposer.org/) before site installation
 code files were mounted like this:
 ```yaml
   volumes:
-    - ./code:/var/www/html
-```
-Otherwise, you need to update Makefile in the project root directory:
-```bash
-# from:
-docker-compose exec php ../vendor/bin/drush
-# to:
-docker-compose exec php ./vendor/bin/drush
+    - ./:/var/www/html
 ```
 
 ## Configuration management
-To export some changes from database to sync directory please use the following command:
-`drupal config:export --remove-uuid --remove-config-hash`
+To export some changes from database to sync directory please use the following command
+ (we're assuming you're using [docker4drupal](https://github.com/wodby/docker4drupal)):
+`docker-compose exec php ../vendor/bin/drupal config:export --remove-uuid --remove-config-hash`
 
 There are two ways to pull and apply the latest changes:
 
 1. By performing a new installation via Drush (Recommended):
 `make install`
 
-2. By importing new changes from sync directory to the database:
-`drush cim --partial --source="profiles/idea/config/install"`
+2. By importing new changes from sync directory to the database
+ (we're assuming you're using [docker4drupal](https://github.com/wodby/docker4drupal)):
+`docker-compose exec php ../vendor/bin/drush cim --partial --source="profiles/idea/config/install"`
 
 It'll show a huge diff because of UUID differences.
 
