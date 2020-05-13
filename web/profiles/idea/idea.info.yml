@@ -50,6 +50,7 @@ dependencies:
   - path_alias
   - quickedit
   - rabbit_hole
+  - rh_node
   - rh_taxonomy
   - shortcut
   - system
