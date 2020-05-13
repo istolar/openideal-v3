@@ -56,7 +56,7 @@ There are two ways to pull and apply the latest changes:
 `make install`
 
 2. By importing new changes from sync directory to the database:
-`drush cim --partial --source="profiles/openideal/config/install"`
+`drush cim --partial --source="profiles/idea/config/install"`
 
 It'll show a huge diff because of UUID differences.
 

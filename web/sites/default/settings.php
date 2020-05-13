@@ -237,7 +237,7 @@ $databases = [];
  * directory in the public files path. The setting below allows you to set
  * its location.
  */
-$config_directories['sync'] = 'web/profiles/openideal/config/install';
+$config_directories['sync'] = 'web/profiles/idea/config/install';
 
 /**
  * Settings:

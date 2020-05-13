@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install, update and uninstall functions for the openideal install profile.
+ * Install, update and uninstall functions for the idea install profile.
  */
 
 use Drupal\user\Entity\User;
@@ -13,7 +13,7 @@ use Drupal\user\Entity\User;
  *
  * @see system_install()
  */
-function openideal_install() {
+function idea_install() {
   // Assign user 1 the "administrator" role.
   // @see standard_install().
   $user = User::load(1);

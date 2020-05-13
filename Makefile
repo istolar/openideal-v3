@@ -8,7 +8,7 @@ composer-install:
 	composer install
 
 site-install:
-	docker-compose exec php ../vendor/bin/drush site-install openideal \
+	docker-compose exec php ../vendor/bin/drush site-install idea \
 		--local=en \
 		--account-name=$(ACCOUNT_NAME) \
 		--account-mail=$(ACCOUNT_EMAIL) \
