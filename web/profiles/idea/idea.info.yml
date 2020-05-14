@@ -37,6 +37,8 @@ dependencies:
   - file
   - filter
   - flag
+  - gnode
+  - group
   - history
   - image
   - layout_builder
