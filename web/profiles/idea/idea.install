@@ -24,6 +24,7 @@ function idea_install() {
   $taxonomy_term_storage = $entity_type_manager->getStorage('taxonomy_term');
   $node_storage = $entity_type_manager->getStorage('node');
   $config_pages_storage = $entity_type_manager->getStorage('config_pages');
+  $group_storage = \Drupal::entityTypeManager()->getStorage('group');
 
   // Create default life cycles taxonomy terms.
   $default_life_cycles = [
@@ -60,4 +61,11 @@ function idea_install() {
     'label' => 'OpenideaL Configurations',
     'field_default_challenge' => 1,
   ])->save();
+
+  // Create an Idea group entity.
+  $group_storage->create([
+      'label' => 'Idea',
+      'type' => 'idea',
+      'langcode' => 'en',
+    ])->save();
 }
