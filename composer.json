@@ -32,6 +32,7 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/ctools": "^3.4",
+        "drupal/default_content": "^1.0",
         "drupal/devel": "^2.1",
         "drupal/dropzonejs": "^2.1",
         "drupal/entity_browser": "^2.5",
