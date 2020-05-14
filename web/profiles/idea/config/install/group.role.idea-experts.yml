@@ -3,12 +3,14 @@ status: true
 dependencies:
   config:
     - group.type.idea
-id: idea-outsider
-label: Outsider
-weight: -101
-internal: true
-audience: outsider
+id: idea-experts
+label: Experts
+weight: 5
+internal: false
+audience: member
 group_type: idea
 permissions_ui: true
 permissions:
+  - 'access content overview'
+  - 'access group_node overview'
   - 'view group_node:idea entity'

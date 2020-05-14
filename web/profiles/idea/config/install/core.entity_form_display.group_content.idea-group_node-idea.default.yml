@@ -7,8 +7,17 @@ id: group_content.idea-group_node-idea.default
 targetEntityType: group_content
 bundle: idea-group_node-idea
 mode: default
-content: {  }
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
-  entity_id: true
   path: true
   uid: true
