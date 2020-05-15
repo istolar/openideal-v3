@@ -37,7 +37,7 @@ function idea_install() {
   foreach ($default_life_cycles as $key => $term_name) {
     $taxonomy_term_storage->create([
       'name' => $term_name,
-      'vid' => 'idea_states',
+      'vid' => 'idea_lifecycle_phase',
       'weight' => $key
     ])->save();
   }

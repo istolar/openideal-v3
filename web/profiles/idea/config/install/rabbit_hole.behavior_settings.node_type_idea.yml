@@ -1,8 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  config:
-    - node.type.idea
+dependencies: {  }
 id: node_type_idea
 action: duplicate_idea_page_redirect
 allow_override: 1
