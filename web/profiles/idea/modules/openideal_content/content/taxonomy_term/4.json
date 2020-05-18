@@ -4,9 +4,9 @@
             "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/idea_states"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/idea_lifecycle_phase"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/idea_states\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/idea_lifecycle_phase\/parent": [
             null
         ]
     },
@@ -17,7 +17,7 @@
     ],
     "uuid": [
         {
-            "value": "e9cf1a9f-3dff-4c18-a781-aacfc06b30d5"
+            "value": "b641f318-a9ab-419a-8efc-ab2e46d05da3"
         }
     ],
     "revision_id": [
@@ -33,12 +33,12 @@
     ],
     "vid": [
         {
-            "target_id": "idea_states"
+            "target_id": "idea_lifecycle_phase"
         }
     ],
     "revision_created": [
         {
-            "value": "2020-05-14T11:51:41+00:00",
+            "value": "2020-05-18T09:25:17+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -60,13 +60,13 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/idea_states\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/idea_lifecycle_phase\/parent": [
             null
         ]
     },
     "changed": [
         {
-            "value": "2020-05-14T11:51:41+00:00",
+            "value": "2020-05-18T09:25:17+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
