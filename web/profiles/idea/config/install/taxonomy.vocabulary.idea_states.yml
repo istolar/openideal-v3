@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Idea states'
-vid: idea_states
-description: 'It provides life cycles for idea content type.'
-weight: 0

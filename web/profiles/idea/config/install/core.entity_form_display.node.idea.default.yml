@@ -87,13 +87,9 @@ content:
     region: content
   field_idea_phase:
     weight: 9
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
     region: content
   field_idea_tags:
     weight: 10

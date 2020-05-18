@@ -8,7 +8,7 @@ dependencies:
     - field.storage.node.field_idea_tags
     - node.type.idea
     - system.menu.main
-    - taxonomy.vocabulary.idea_states
+    - taxonomy.vocabulary.idea_lifecycle_phase
   module:
     - better_exposed_filters
     - node
@@ -521,7 +521,7 @@ display:
           reduce_duplicates: false
           type: select
           limit: true
-          vid: idea_states
+          vid: idea_lifecycle_phase
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
@@ -790,7 +790,7 @@ display:
           reduce_duplicates: false
           type: select
           limit: true
-          vid: idea_states
+          vid: idea_lifecycle_phase
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid

@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.idea_states
-id: taxonomy_term.idea_states.default
+    - taxonomy.vocabulary.idea_lifecycle_phase
+id: taxonomy_term.idea_lifecycle_phase.default
 targetEntityType: taxonomy_term
-bundle: idea_states
+bundle: idea_lifecycle_phase
 mode: default
 content:
   name:
