@@ -52,8 +52,8 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
 function openideal_idea_node_presave(EntityInterface $entity) {
   // Check entity type and duplicate_of field of the entity.
   if (
-    $entity->getType() == 'idea' &&
-    !empty($entity->field_duplicate_of->entity)
+    $entity->bundle() == 'idea' &&
+    !$entity->get('field_duplicate_of')->isEmpty()
   ) {
     // Set 'merged' value for idea_phase field of the entity.
     $entity->field_idea_phase->target_id = 5;
