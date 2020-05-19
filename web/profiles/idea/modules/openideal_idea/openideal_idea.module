@@ -5,6 +5,7 @@
  * Contains openideal_idea.module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -43,19 +44,18 @@ function openideal_idea_form_alter(&$form, FormStateInterface $form_state, $form
     // Set default value for challenge form element of the idea content type.
     $form['field_challenge']['widget'][0]['target_id']['#default_value'] = $default_challenge;
   }
-
-  $form['actions']['submit']['#submit'][] = '_openideal_idea_form_submit';
 }
 
 /**
- * Custom submit handler for idea create/edit form.
+ * Implements hook_ENTITY_TYPE_presave().
  */
-function _openideal_idea_form_submit($form, FormStateInterface $form_state) {
-  $node = $form_state->getFormObject()->getEntity();
-  // Check duplicate_of field of the entity.
-  if (!empty($form_state->getValue('field_duplicate_of')[0]['target_id'])) {
+function openideal_idea_node_presave(EntityInterface $entity) {
+  // Check entity type and duplicate_of field of the entity.
+  if (
+    $entity->getType() == 'idea' &&
+    !empty($entity->field_duplicate_of->entity)
+  ) {
     // Set 'merged' value for idea_phase field of the entity.
-    $node->field_idea_phase->target_id = 5;
-    $node->save();
+    $entity->field_idea_phase->target_id = 5;
   }
 }
